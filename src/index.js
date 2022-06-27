@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import App from "./src/App.js";
+import App from "./App.js";
 
 const AppRouting = ()=>{
   return (
