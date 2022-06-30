@@ -1,20 +1,22 @@
+/** @jest-environment jsdom */
 import React from 'react';
-import { shallow } from 'enzyme';
+import { screen, render, cleanup } from '@testing-library/react'
 import Navbar from './Navbar';
-
-import "../../setUpTests";
+import '@testing-library/jest-dom'
 
 describe('Test Navbar Component', ()=>{
 
-  let NavContainer;
-
-  beforeEach(() => (NavContainer = shallow(<Navbar />)))
+  beforeEach(() => (render(<Navbar />)))
 
   it('Should render a Nav',()=>{
-    expect(NavContainer.find('nav').length).toEqual(1);
+    const navbarComponent = screen.getByRole('navigation');
+    
+    expect(navbarComponent).toBeInTheDocument()
   });
 
   it('Should have proper heading',()=>{
-    expect(NavContainer.find('span').text()).toMatch(/Todos App/);
+    const navbarComponent = screen.getByText(/Todos App/);
+    
+    expect(navbarComponent).toBeInTheDocument()
   });
 })

@@ -1,32 +1,30 @@
+/** @jest-environment jsdom */
 import React from 'react';
-import { shallow } from 'enzyme';
+import { screen, render, cleanup } from '@testing-library/react'
 import App from './App';
-import Navbar from './components/Navbar/Navbar';
-import AddTodo from './components/AddTodo';
-import TodoList from './components/TodoList';
+import '@testing-library/jest-dom'
 
-import "./setUpTests"
+describe('App component', () => {
 
-describe('App Component', ()=>{
+  beforeEach(() => (render(<App />)))
 
-  let container;
-
-  beforeEach(() => (container = shallow(<App />)))
-
-  it('Should contain one div',()=>{
-    expect(container.find('div').length).toEqual(1);
-  });
-
-  it('Should render Navbar Component',()=>{
-    expect(container.containsMatchingElement(<Navbar />)).toEqual(true)
+  it('Should render Navbar Component',()=>{  
+    const navbarComponent = screen.getByRole('navigation');
+    
+    expect(navbarComponent).toBeInTheDocument()
   });
 
   it('Should render AddTodo Component',()=>{
-    expect(container.containsMatchingElement(<AddTodo />)).toEqual(true)
+    const addTodoComponent = screen.getByTestId('AddTodo');
+    
+    expect(addTodoComponent).toBeInTheDocument()
   });
 
   it('Should render TodoList Component',()=>{
-    expect(container.containsMatchingElement(<TodoList />)).toEqual(true)
+    const todoListComponent = screen.getByTestId('TodoList');
+
+    expect(todoListComponent).toBeInTheDocument()
   });
 
+  afterAll(cleanup)
 })

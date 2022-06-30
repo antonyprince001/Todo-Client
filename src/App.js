@@ -5,8 +5,9 @@ import TodoList from "./components/TodoList";
 
 const App = () => {
    return (
-      <div className="App">
+      <div className="App" title="check">
          <Navbar />
+         <br /><br />
          <AddTodo />
          <TodoList />
       </div>

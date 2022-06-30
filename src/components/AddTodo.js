@@ -2,7 +2,7 @@ import React from "react";
 
 const AddTodo = ()=>{
     return (
-        <p>AddTodo</p>
+        <p data-testid="AddTodo">hi</p>
     )
 }
 
