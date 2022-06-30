@@ -1,6 +1,6 @@
 import React from "react";
 import AddTodo from "./components/AddTodo";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import TodoList from "./components/TodoList";
 
 const App = () => {
