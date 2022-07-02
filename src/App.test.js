@@ -20,10 +20,10 @@ describe('App component', () => {
     expect(addTodoComponent).toBeInTheDocument()
   });
 
-  it('Should render TodoList Component',()=>{
-    const todoListComponent = screen.getByTestId('TodoList');
+  it('Should render TodoTable Component',()=>{
+    const todoTableComponent = screen.getByTestId('TodoTable');
 
-    expect(todoListComponent).toBeInTheDocument()
+    expect(todoTableComponent).toBeInTheDocument()
   });
 
   afterAll(cleanup)
