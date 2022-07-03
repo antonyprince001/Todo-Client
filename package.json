@@ -8,6 +8,12 @@
     "build": "rm -rf dist && webpack --mode development",
     "dev": "nodemon app.js"
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {

@@ -3,12 +3,16 @@ import React from "react";
 import TodoTable from "./TodoTable";
 import { render, screen , fireEvent} from '@testing-library/react';
 import '@testing-library/jest-dom'
-
+import { server, todoErrorResponse } from "../../mocks/server";
 
 describe("Rendering of Todo table", ()=>{  
+    beforeAll(() => server.listen());
+    afterAll(() => server.close());
 
     it("Should render a table",()=>{
-        render(<TodoTable />)
+        render(
+            <TodoTable />
+           )
 
         const todoTable = screen.getByRole('table');
     

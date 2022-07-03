@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 let todoApi =  axios.create({
     baseURL : "http://localhost:8080/api/v1"
 });
@@ -12,7 +13,8 @@ export const createTodo =  async (task) => {
     }
 
     try{
-        return await todoApi.post("/todos", todo);
+        let response =  await todoApi.post("/todos", todo);
+        return response;
         }catch(err){
             return null;
         }

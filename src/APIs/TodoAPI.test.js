@@ -35,7 +35,7 @@ describe('Test Todo API', () => {
     it('Todo API should fetch all', async () => {
         let response = await fetchAllTodos();
 
-        expect(response.data[0]).not.toBe(null);
+        expect(response).not.toBe(null);
     });
 
     it('Todo API should update by id', async () => {

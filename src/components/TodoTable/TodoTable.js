@@ -1,11 +1,22 @@
 import React from "react";
 import Todo from "../Todo/Todo";
+import { TodoContext } from "../../Context/TodoContext";
+import { useEffect, useContext } from "react";
+import { fetchAllTodos } from "../../APIs/TodoAPI";
+const TodoTable = ()=>{
+    
+    const { todos, setTodos } = useContext(TodoContext);
 
-const TodoList = ()=>{
-    let todos = [{
-        "id" : 0,
-        "description" : "NEEV"
-    }]
+    const fetchTodos = async () => {
+        try {
+            const response = await fetchAllTodos();
+            console.log(response);
+            setTodos(response.data);
+        } catch (err) { }
+    };
+    useEffect( () => {
+          fetchTodos();
+    }, []);
 
     const handleUpdate = (updatedTodo)=>{
 
@@ -29,8 +40,7 @@ const TodoList = ()=>{
                 </tr>
             </thead>
             <tbody>
-            {todos &&
-                    todos.length === 0 ?
+            {(   todos === undefined || todos.length === 0 ?
                     <tr align="center">
                         <td colSpan="7">Hurray ! No pending tasks</td>
                     </tr> :
@@ -39,11 +49,11 @@ const TodoList = ()=>{
                             <Todo key={todo.id} todo={todo} deleteTodo={handleDelete} updateTodo={handleUpdate} />
                         );
                     })
-                }
+            )}
             </tbody>
         </table>
         </div>
     )
 }
 
-export default TodoList;
+export default TodoTable;
