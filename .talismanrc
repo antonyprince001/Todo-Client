@@ -1,8 +1,8 @@
 fileignoreconfig:
 - filename: package-lock.json
-  checksum: 1e56036b98db5cb42044c930e44d7144d8014baf9ba31f5119473f7025e84978
+  checksum: 0573d792c8652d4fa64bfdca7d22bec079f969bb3ff6c0da488ec33c909eb5c6
 - filename: index.html
   checksum: 31d625066d30ace672656f850c2f3b1f65a851a429d83e72960f4c3e99e47e33
 - filename: src/components/TodoTable/TodoTable.js
-  checksum: 8529f9d88a54aaccf2b7918fe6f55f93665bb21cd523c654144c3f8e958b81c7
+  checksum: b1a61645e1fed073e8652abaf0388da7bf5db3ce0ff45b5ac7a6b7428a6889a8
 version: ""

@@ -7,7 +7,7 @@ const TodoList = ()=>{
         "description" : "NEEV"
     }]
 
-    const handleUpdate = (id,updatedTodo)=>{
+    const handleUpdate = (updatedTodo)=>{
 
     }
 

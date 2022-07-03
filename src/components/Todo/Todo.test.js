@@ -115,7 +115,7 @@ describe("Rendering of Todo", ()=>{
         const buttonComponent = await screen.findByTestId('delete');
         fireEvent.click(buttonComponent);
 
-        expect(deleteTodo).toBeCalledTimes(1);
+        expect(deleteTodo).toBeCalled();
 
     })
 
@@ -129,7 +129,7 @@ describe("Rendering of Todo", ()=>{
         const buttonComponent = await screen.findByTestId('delete');
         fireEvent.click(buttonComponent);
 
-        expect(deleteTodo).toBeCalledTimes(1);
+        expect(deleteTodo).toBeCalled();
 
     })
 
