@@ -2,7 +2,7 @@ import React from "react";
 import Todo from "../Todo/Todo";
 import { TodoContext } from "../../Context/TodoContext";
 import { useEffect, useContext } from "react";
-import { fetchAllTodos } from "../../APIs/TodoAPI";
+import { fetchAllTodos, deleteTodo } from "../../APIs/TodoAPI";
 const TodoTable = ()=>{
     
     const { todos, setTodos } = useContext(TodoContext);
@@ -22,8 +22,9 @@ const TodoTable = ()=>{
 
     }
 
-    const handleDelete = (id)=>{
-
+    const handleDelete = async (id)=>{
+        let response = await deleteTodo(id);
+        fetchTodos();
     }
 
     return (
