@@ -3,4 +3,6 @@ fileignoreconfig:
   checksum: 1e56036b98db5cb42044c930e44d7144d8014baf9ba31f5119473f7025e84978
 - filename: index.html
   checksum: 31d625066d30ace672656f850c2f3b1f65a851a429d83e72960f4c3e99e47e33
+- filename: src/components/TodoTable/TodoTable.js
+  checksum: 8529f9d88a54aaccf2b7918fe6f55f93665bb21cd523c654144c3f8e958b81c7
 version: ""

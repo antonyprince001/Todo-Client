@@ -7,6 +7,14 @@ const TodoList = ()=>{
         "description" : "NEEV"
     }]
 
+    const handleUpdate = (id,updatedTodo)=>{
+
+    }
+
+    const handleDelete = (id)=>{
+
+    }
+
     return (
         <div data-testid="TodoTable" className="container">
         <table className="table table-hover table-success">
@@ -28,7 +36,7 @@ const TodoList = ()=>{
                     </tr> :
                     todos.map((todo) => {
                         return (
-                            <Todo key={todo.id} todo={todo} />
+                            <Todo key={todo.id} todo={todo} deleteTodo={handleDelete} updateTodo={handleUpdate} />
                         );
                     })
                 }
