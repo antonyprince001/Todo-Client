@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
+import { TodoContext } from "../../Context/TodoContext";
+import { fetchAllTodos } from "../../APIs/TodoAPI";
 
 const AddTodo = ({ add }) => {
 
     const [task, setTask] = useState("");
 
-    const handleSubmit = (e) => {
+    const { setTodos } = useContext(TodoContext);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        add(task);
+        if(task !== null || task !== undefined || task.trim() !== ""){
+            await add(task);
+            let allTodos = await fetchAllTodos();
+            setTodos(allTodos.data);
+            setTask("");
+        }
+
     }
 
     return (
