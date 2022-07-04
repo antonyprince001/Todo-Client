@@ -3,7 +3,7 @@ React application built following Test Driven Development for Todo management
 
 ### Objective : 
 
-Setup a React Application from scratch without using create-react-app(refer the previous section) and build a todo application's frontend. 
+Setup a React Application from scratch without using create-react-app and build a todo application's frontend. 
 Call the relevant APIs for the following tasks 
 
 - Creating a todo
