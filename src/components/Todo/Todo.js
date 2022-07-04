@@ -6,17 +6,26 @@ const Todo = ({todo, deleteTodo , updateTodo})=>{
     const [name, setName] = useState(todo.description);
     const [completed, setCompleted] = useState(todo.completed);
     const [priority, setPriority] = useState(todo.priority);
-
-    const handleUpdate = (e,id)=>{
+    
+    const handleUpdate = async (e,id)=>{
         let updatedTodo = {
             "id" : todo.id,
             "description" : name,
             "completed" : completed,
             "priority" : priority
         }
-        updateTodo(id,updateTodo);
+        await updateTodo(updatedTodo);
+        setEditing(false);
     }
 
+    const togglePriority = ()=>{
+        console.log(!priority);
+        setPriority(!priority);
+    }
+
+    const toggleCompleted = ()=>{
+        setCompleted(!completed);
+    }
     const handleDelete = (e,id)=>{
         deleteTodo(id)
     }
@@ -38,7 +47,8 @@ const Todo = ({todo, deleteTodo , updateTodo})=>{
                     id={todo.id} 
                     type="checkbox" 
                     name="description"
-                    value={todo.completed}
+                    value={completed}
+                    checked={completed}
                     onChange={(e) => toggleCompleted(e.target.value)}  
                 />
             </td>
@@ -47,7 +57,8 @@ const Todo = ({todo, deleteTodo , updateTodo})=>{
                     id={todo.id} 
                     type="checkbox" 
                     name="description"
-                    value={todo.completed}
+                    checked={priority}
+                    value={priority}
                     onChange={(e) => togglePriority(e.target.value)}  
                 />
             </td> 

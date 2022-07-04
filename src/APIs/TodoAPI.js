@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 let todoApi =  axios.create({
     baseURL : "http://localhost:8080/api/v1"
 });
@@ -40,7 +39,9 @@ export const fetchAllTodos =  async () => {
 
 export const updateTodo =  async (todo) => {
     try{
-        const response = await todoApi.put(`/todos/${todo.id}`);
+        console.log(todo)
+        const response = await todoApi.put(`/todos/${todo.id}`,todo);
+        console.log(response)
         return response;
         }catch(err){
             return null;
